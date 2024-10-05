@@ -22,10 +22,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat "docker rm -f Service-container"
-                bat "docker rm -f Service-image"
-                bat "docker build -t Service-image ."
-                bat "docker run -p 8761:8761 -d --name Service-container Service-image"
+                bat "docker rm -f service-container"
+                bat "docker rm -f service-image"
+                bat "docker build -t service-image ."
+                bat "docker run -p 8761:8761 -d --name service-container service-image"
             }
         }
     }
